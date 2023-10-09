@@ -9,9 +9,68 @@
   <body>
     <h1>My IMDB</h1>
     <nav class="navBar">
-      <a href="#home">home</a>
+      <a href="#home" id="home">home</a>
       <a href="#addMovie">AddMovie</a>
     </nav>
-    <section id="home">Home Page</section>
+    <section id="home">
+      <div class="search-container">
+        <input type="text" id="movie-search" placeholder="Search for a movie" />
+        <button id="search-button">search</button>
+      </div>
+      <div class="movie-cards">
+        <div class="movie-card">
+          <div>
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BMmZiN2VmMjktZDE5OC00ZWRmLWFlMmEtYWViMTY4NjM3ZmNkXkEyXkFqcGdeQXVyMTI2MTc2ODM3._V1_.jpg"
+              ,
+              alt="evilDead poster"
+            />
+          </div>
+          <div class="content">
+            <label
+              >Movie title :
+              <h2 id="title">Evil Dead</h2></label
+            >
+            <label
+              >release year :
+              <p id="year">2005</p></label
+            >
+            <label
+              >Movie rating :
+              <p id="rating">★★★★</p></label
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="addMovie">
+      <h2>Movie Form</h2>
+      <form id="add-movie-form">
+        <label for="movie-image"
+          >Image URL:
+          <input type="text" id="movie-image" name="movie-image" required
+        /></label>
+        <label for="movie-title"
+          >Title:
+          <input type="text" id="movie-title" name="movie-title" required
+        /></label>
+        <label for="movie-year"
+          >Year:
+          <input type="number" id="movie-year" name="movie-year" required
+        /></label>
+        <label for="movie-rating"
+          >Rating:
+          <select id="movie-rating" name="movie-rating" required>
+            <option value="1">★</option>
+            <option value="2">★★</option>
+            <option value="3">★★★</option>
+            <option value="4">★★★★</option>
+            <option value="5">★★★★★</option>
+          </select></label
+        >
+
+        <button type="submit" id="submit">Add Movie</button>
+      </form>
+    </section>
   </body>
 </html>
