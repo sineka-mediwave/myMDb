@@ -58,12 +58,31 @@ button:hover {
 }
 
 .movie-cards {
-  display: flex;
-  flex-wrap: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 15px;
+  text-align: center;
 }
+
+@media (max-width: 1110px) {
+  .movie-cards {
+    grid-template-columns: auto auto auto;
+  }
+}
+@media (max-width: 991px) {
+  .movie-cards {
+    grid-template-columns: auto auto;
+  }
+}
+@media (max-width: 480px) {
+  .movie-cards {
+    grid-template-columns: auto;
+  }
+}
+
 .movie-card {
   width: 300px;
-  margin: 20px;
+  margin-bottom: 20px;
   padding: 10px;
   border: 1px solid #ccc;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -80,11 +99,12 @@ button:hover {
 }
 
 #rating {
-  color: #000;
+  color: yellow;
 }
 
 #addMovie {
   padding: 20px;
+
   border: 1px solid #ccc;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
