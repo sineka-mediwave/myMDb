@@ -54,7 +54,9 @@ button {
 button:hover {
   background-color: #444;
 }
-
+option {
+  color: #000;
+}
 .navBar {
   margin-bottom: 20px;
   padding: 10px;
@@ -87,8 +89,7 @@ button:hover {
   box-shadow: 0 0 2px #fff;
 }
 
-#rating,
-option {
+#rating {
   color: #fff;
 }
 

@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import Home from "./components/Home";
+import MovieForm from "./components/MovieForm";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [movies, setMovies] = useState([]);
+  const [showAddMovie, setShowAddMovie] = useState(false);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+      <h1>My IMDB</h1>
+      <div className="navBar">
+        <a href="#" onClick={() => setShowAddMovie(false)}>
+          Home
         </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <a href="#" onClick={() => setShowAddMovie(true)}>
+          Add Movie
         </a>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <main>
+        {showAddMovie ? (
+          <div id="addMovie">
+            <MovieForm />
+          </div>
+        ) : (
+          // <AddMovie onAddMovie={handleAddMovie} />
+          <div id="home">
+            <Home movies={movies} />
+          </div>
+        )}
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
