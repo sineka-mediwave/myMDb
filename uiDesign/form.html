@@ -12,34 +12,56 @@
       <a href="index.html">home</a>
       <a href="#addMovie">AddMovie</a>
     </nav>
-    <section id="addMovie">
-      <h2>Movie Form</h2>
-      <form id="add-movie-form">
-        <label for="movie-image"
-          >Image URL:
-          <input type="text" id="movie-image" name="movie-image" required
-        /></label>
-        <label for="movie-title"
-          >Title:
-          <input type="text" id="movie-title" name="movie-title" required
-        /></label>
-        <label for="movie-year"
-          >Year:
-          <input type="number" id="movie-year" name="movie-year" required
-        /></label>
-        <label for="movie-rating"
-          >Rating:
-          <select id="movie-rating" name="movie-rating" required>
-            <option value="1">★</option>
-            <option value="2">★★</option>
-            <option value="3">★★★</option>
-            <option value="4">★★★★</option>
-            <option value="5">★★★★★</option>
-          </select></label
-        >
+    <div class="backgroundFrom">
+      <section id="addMovie">
+        <h2>Movie Form</h2>
+        <form id="add-movie-form">
+          <label for="movie-image"
+            >Image URL:
+            <input
+              type="text"
+              id="movie-image"
+              placeholder="paste image url"
+              name="movie-image"
+              required
+          /></label>
+          <label for="movie-title"
+            >Title:
+            <input
+              type="text"
+              id="movie-title"
+              placeholder="movie title"
+              name="movie-title"
+              required
+          /></label>
+          <label for="movie-year"
+            >Year:
+            <input
+              type="number"
+              id="movie-year"
+              placeholder="released year"
+              name="movie-year"
+              required
+          /></label>
+          <label for="movie-rating"
+            >Rating:
+            <select
+              id="movie-rating"
+              name="movie-rating"
+              placeholder="rate the movie"
+              required
+            >
+              <option value="1">★</option>
+              <option value="2">★★</option>
+              <option value="3">★★★</option>
+              <option value="4">★★★★</option>
+              <option value="5">★★★★★</option>
+            </select></label
+          >
 
-        <button type="submit" id="submit">Add Movie</button>
-      </form>
-    </section>
+          <button type="submit" id="submit">Add Movie</button>
+        </form>
+      </section>
+    </div>
   </body>
 </html>

@@ -6,41 +6,45 @@
   font-family: "poppins", sans-serif;
   box-sizing: border-box;
   text-align: center;
+  color: #fff;
 }
 
 body {
   padding: 10px;
-  background-color: #dde6ed;
+  background-color: #000;
 }
 h1 {
   padding-bottom: 20px;
-  color: #333;
+  color: rgb(245, 197, 24);
 }
 
 a {
-  color: #fff;
   text-decoration: none;
+  font-size: 20px;
 }
 
 input,
 select {
   width: 50%;
   padding: 8px 10px;
+  color: #000;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 label {
   margin-bottom: 10px;
+  font-size: 18px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: left;
 }
-
+label {
+  margin-right: 10px;
+}
 button {
   background-color: #333;
-  color: #fff;
   border: none;
-  padding: 10px 15px;
+  padding: 9px 15px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -53,15 +57,17 @@ button:hover {
   padding: 10px;
   display: flex;
   justify-content: space-around;
-  background-color: #526d82;
+  background-color: #1f1f1f;
   border-radius: 10px;
 }
 
+.search-container {
+  margin-bottom: 20px;
+}
 .movie-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 15px;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 @media (max-width: 1110px) {
@@ -82,34 +88,38 @@ button:hover {
 
 .movie-card {
   width: 300px;
-  margin-bottom: 20px;
+  margin: 20px;
   padding: 10px;
   border: 1px solid #ccc;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px #fff;
 }
 
 .movie-card img {
   max-width: 100%;
-  height: auto;
+  height: 80%;
+  box-shadow: 0 0 2px #fff;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-}
-
-#rating {
-  color: rgba(201, 201, 32, 0.925);
+#rating,
+option {
+  color: #fff;
 }
 
 #addMovie {
-  margin: 0 auto;
+  margin: 0px auto;
   padding: 20px;
   width: 500px;
+  background-color: #1f1f1f;
   border: 1px solid #ccc;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px #ccc;
 }
 
 #add-movie-form {
   padding: 10px;
+}
+
+.backgroundFrom {
+  padding: 150px 0;
+  background-image: url(./assets/pxfuel.jpg);
+  height: 100vh;
 }
