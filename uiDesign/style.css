@@ -38,8 +38,11 @@ label {
   align-items: center;
   justify-content: left;
 }
-label {
-  margin-right: 10px;
+
+form label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 button {
   background-color: #333;
@@ -70,22 +73,6 @@ button:hover {
   justify-content: center;
 }
 
-@media (max-width: 1110px) {
-  .movie-cards {
-    grid-template-columns: auto auto auto;
-  }
-}
-@media (max-width: 991px) {
-  .movie-cards {
-    grid-template-columns: auto auto;
-  }
-}
-@media (max-width: 480px) {
-  .movie-cards {
-    grid-template-columns: auto;
-  }
-}
-
 .movie-card {
   width: 300px;
   margin: 20px;
@@ -113,7 +100,17 @@ option {
   border: 1px solid #ccc;
   box-shadow: 0 0 20px #ccc;
 }
-
+@media (max-width: 528px) {
+  #addMovie {
+    width: 300px;
+  }
+  form label {
+    flex-direction: column;
+  }
+  #add-movie-form {
+    padding: 10px;
+  }
+}
 #add-movie-form {
   padding: 10px;
 }
