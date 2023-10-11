@@ -7,3 +7,12 @@
 ## Creating react app
 
 Added navigation bar, that switch between home and addMovie page.
+
+## Text overflow
+
+```
+  width: 20ch;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+```

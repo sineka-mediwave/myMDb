@@ -103,6 +103,12 @@ option {
   height: 80%;
   box-shadow: 0 0 2px #fff;
 }
+.movie-card h3 {
+  width: 20ch;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 .star {
   color: #fff;
 }
