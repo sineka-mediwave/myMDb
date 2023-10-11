@@ -99,8 +99,10 @@ option {
   height: 80%;
   box-shadow: 0 0 2px #fff;
 }
-
 .star {
+  color: #fff;
+}
+.gold {
   color: rgb(245, 197, 24);
 }
 #addMovie {

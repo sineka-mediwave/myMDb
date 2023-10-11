@@ -1,5 +1,9 @@
+import { useState } from "react";
+
 const Home = (props) => {
   const { movies } = props;
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredMovies, setFilteredMovies] = useState([]);
   return (
     <>
       <div className="search-container">
@@ -13,7 +17,25 @@ const Home = (props) => {
             <h3>{movie.title}</h3>
             <p>Year: {movie.year}</p>
             <p>
-              Rating: <span className="star">{movie.rating}</span>
+              Rating:
+              {(() => {
+                const stars = [];
+                for (let i = 0; i < Number(movie.rating); i++) {
+                  stars.push(
+                    <span key={i} className="star gold">
+                      &#9733;
+                    </span>
+                  );
+                }
+                for (let i = Number(movie.rating); i < 5; i++) {
+                  stars.push(
+                    <span key={i} className="star">
+                      &#9733;
+                    </span>
+                  );
+                }
+                return stars;
+              })()}
             </p>
           </div>
         ))}

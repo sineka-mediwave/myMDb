@@ -21,7 +21,6 @@ function App() {
     if (!movies) {
       setToLocalStorage(movies);
     }
-    console.log("saved");
   }, [movies]);
 
   function handleAddMovie(newMovie) {
@@ -49,7 +48,6 @@ function App() {
             </div>
           </div>
         ) : (
-          // <AddMovie onAddMovie={handleAddMovie} />
           <div id="home">
             <Home movies={movies} />
           </div>
