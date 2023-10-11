@@ -1,9 +1,9 @@
 import { useState } from "react";
-
+import { v4 as uuidv4 } from "uuid";
 const MovieForm = (props) => {
   const { onAddMovie } = props;
   const [movie, setMovie] = useState({
-    id: "",
+    id: uuidv4(),
     image: "",
     title: "",
     year: "",
@@ -17,10 +17,6 @@ const MovieForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setMovie((prevMovie) => {
-      [...prevMovie, (movie.id = new Date.getTime())];
-    });
-    console.log(movie);
     onAddMovie(movie);
     setMovie({
       image: "",
