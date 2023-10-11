@@ -80,6 +80,7 @@ option {
 #movie-search:focus {
   outline: 2px solid rgb(245, 197, 24);
 }
+
 #search-button {
   border-radius: 0px 5px 5px 0px;
 }
@@ -113,7 +114,7 @@ option {
   padding: 20px;
   width: 500px;
   text-align: center;
-  background-color: hwb(0 12% 88% / 0.867);
+  background-color: hwb(0 12% 88% / 0.942);
   border: 1px solid #ccc;
   box-shadow: 0 0 20px #ccc;
 }
@@ -129,7 +130,7 @@ option {
   }
 }
 
-.backgroundForm {
+.formbackground-image {
   padding: 150px 0;
   background-image: url(./assets/pxfuel.jpg);
   height: 100vh;

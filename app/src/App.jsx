@@ -12,6 +12,19 @@ function getFromLocalStorage() {
   return JSON.parse(localStorage.getItem("My-IMDB")) || [];
 }
 
+const NavigationBar = (props) => {
+  const { setShowAddMovie } = props;
+  return (
+    <div className="navBar">
+      <a href="#" onClick={() => setShowAddMovie(false)}>
+        Home
+      </a>
+      <a href="#" onClick={() => setShowAddMovie(true)}>
+        Add Movie
+      </a>
+    </div>
+  );
+};
 function App() {
   const [movies, setMovies] = useState([]);
   const [showAddMovie, setShowAddMovie] = useState(false);
@@ -32,17 +45,10 @@ function App() {
   return (
     <>
       <h1>My IMDB</h1>
-      <div className="navBar">
-        <a href="#" onClick={() => setShowAddMovie(false)}>
-          Home
-        </a>
-        <a href="#" onClick={() => setShowAddMovie(true)}>
-          Add Movie
-        </a>
-      </div>
+      <NavigationBar setShowAddMovie={setShowAddMovie} />
       <main>
         {showAddMovie ? (
-          <div className="backgroundForm">
+          <div className="formbackground-image">
             <div id="addMovie">
               <MovieForm onAddMovie={handleAddMovie} />
             </div>

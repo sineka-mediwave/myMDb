@@ -1,41 +1,14 @@
 import { useEffect, useState } from "react";
-
-const MovieCard = (props) => {
-  const { movie } = props;
-  return (
-    <>
-      <img src={movie.image} alt={movie.title} />
-      <h3>{movie.title}</h3>
-      <p>Year: {movie.year}</p>
-      <p>
-        Rating:
-        {(() => {
-          const stars = [];
-          for (let i = 0; i < Number(movie.rating); i++) {
-            stars.push(
-              <span key={i} className="star gold">
-                ★
-              </span>
-            );
-          }
-          for (let i = Number(movie.rating); i < 5; i++) {
-            stars.push(
-              <span key={i} className="star">
-                ★
-              </span>
-            );
-          }
-          return stars;
-        })()}
-      </p>
-    </>
-  );
-};
+import MovieCard from "./MovieCard";
 
 const Home = (props) => {
   const { movies } = props;
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredMovies, setFilteredMovies] = useState(movies);
+
+  useEffect(() => {
+    setFilteredMovies(JSON.parse(localStorage.getItem("My-IMDB")) || []);
+  }, [movies]);
 
   useEffect(() => {
     const filtered = movies.filter((movie) =>
