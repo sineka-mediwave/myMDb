@@ -77,6 +77,9 @@ option {
 #movie-search {
   border-radius: 5px 0px 0px 5px;
 }
+#movie-search:focus {
+  outline: 2px solid rgb(245, 197, 24);
+}
 #search-button {
   border-radius: 0px 5px 5px 0px;
 }
