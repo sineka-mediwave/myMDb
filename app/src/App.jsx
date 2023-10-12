@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import Home from "./components/Home";
-import MovieForm from "./components/MovieForm";
+import { Home, MovieForm, NavigationBar } from "./components";
 import { v4 as uuidv4 } from "uuid";
 
 function setToLocalStorage(movies) {
@@ -12,19 +11,6 @@ function getFromLocalStorage() {
   return JSON.parse(localStorage.getItem("My-IMDB")) || [];
 }
 
-const NavigationBar = (props) => {
-  const { setShowAddMovie } = props;
-  return (
-    <div className="navBar">
-      <a href="#" onClick={() => setShowAddMovie(false)}>
-        Home
-      </a>
-      <a href="#" onClick={() => setShowAddMovie(true)}>
-        Add Movie
-      </a>
-    </div>
-  );
-};
 function App() {
   const [movies, setMovies] = useState([]);
   const [showAddMovie, setShowAddMovie] = useState(false);

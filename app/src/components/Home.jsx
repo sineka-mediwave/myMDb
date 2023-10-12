@@ -14,9 +14,8 @@ const Home = (props) => {
     const filtered = movies.filter((movie) =>
       movie.title.toLowerCase().startsWith(searchTerm.toLowerCase())
     );
-    if (!searchTerm) {
-      setFilteredMovies(movies);
-    }
+    !searchTerm && setFilteredMovies(movies);
+
     setFilteredMovies(filtered);
   }, [searchTerm]);
   const handleSearch = () => {
