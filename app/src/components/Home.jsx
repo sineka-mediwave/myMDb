@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
-
+import SearchBar from "./SearchBar";
 const Home = (props) => {
   const { movies } = props;
   const [searchTerm, setSearchTerm] = useState("");
@@ -15,26 +15,14 @@ const Home = (props) => {
       movie.title.toLowerCase().startsWith(searchTerm.toLowerCase())
     );
     !searchTerm && setFilteredMovies(movies);
-
-    setFilteredMovies(filtered);
+    searchTerm && filtered.length < 1
+      ? alert("not found")
+      : setFilteredMovies(filtered);
   }, [searchTerm]);
-  const handleSearch = () => {
-    console.log("clicked search");
-  };
+
   return (
     <>
-      <div className="search-container">
-        <input
-          type="text"
-          id="movie-search"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Search by movie title..."
-        />
-        <button id="search-button" onClick={handleSearch}>
-          search
-        </button>
-      </div>
+      <SearchBar setSearchTerm={setSearchTerm} />
       <div className="movie-cards">
         {filteredMovies.map((movie, index) => (
           <div className="movie-card" key={index}>
