@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+
 const MovieForm = (props) => {
   const { onAddMovie } = props;
   const [movie, setMovie] = useState({
@@ -26,7 +27,7 @@ const MovieForm = (props) => {
     });
   };
   return (
-    <>
+    <div className="addMovie">
       <h2>Movie Form</h2>
       <form id="add-movie-form" onSubmit={handleSubmit}>
         <label htmlFor="movie-image">
@@ -85,7 +86,7 @@ const MovieForm = (props) => {
 
         <button type="submit">Add Movie</button>
       </form>
-    </>
+    </div>
   );
 };
 
